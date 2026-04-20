@@ -196,6 +196,7 @@ function ResultScreen({
                 alt={cleanDomain}
                 width={18}
                 height={18}
+                unoptimized
                 className="h-[18px] w-[18px] rounded-sm"
               />
               <span className="flex-1 truncate font-mono text-sm text-white/60">
@@ -370,6 +371,7 @@ export function HeroSection() {
                 height={56}
                 src={`https://favicon.vemetric.com/${cleanDomain}`}
                 alt="favicon"
+                unoptimized
                 className="h-14 w-14 rounded-2xl"
               />
               <div className="pulse-soft absolute inset-0 rounded-2xl border border-[#c8f538]/30" />

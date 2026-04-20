@@ -268,6 +268,7 @@ function Favicon({ domain, size = 16 }: { domain: string; size?: number }) {
       height={size}
       loading="lazy"
       decoding="async"
+      unoptimized
       className="rounded-sm object-contain"
       onError={() => setErr(true)}
     />
@@ -468,7 +469,7 @@ export function DashboardMockup() {
                   ))}
                 </div>
 
-                <div style={{ height: 160 }}>
+                <div style={{ height: 160, width: "100%" }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                       data={visibilityData}
@@ -691,7 +692,7 @@ export function DashboardMockup() {
                 </div>
 
                 <div className="flex items-center gap-6">
-                  <div style={{ width: 150, height: 150 }}>
+                  <div style={{ width: 150, height: 150, minWidth: 150 }}>
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
