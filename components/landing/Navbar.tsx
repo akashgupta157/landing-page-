@@ -25,17 +25,17 @@ export function Navbar() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
-      <div
-        className={`mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 md:px-6 transition-[background,border,shadow,backdrop-filter] duration-300 ease-out ${
-          isScrolled
-            ? "border border-white/10 bg-[rgba(8,10,16,0.72)] shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-2xl"
-            : "border border-transparent bg-transparent shadow-none backdrop-blur-none"
-        }`}
-      >
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 md:px-6">
+        {/* Backdrop layer — opacity transition avoids the non-animatable backdrop-filter:none → blur jump */}
+        <div
+          className={`pointer-events-none absolute inset-0 rounded-full border border-white/10 bg-[rgba(8,10,16,0.72)] shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-2xl transition-opacity duration-300 ease-out ${
+            isScrolled ? "opacity-100" : "opacity-0"
+          }`}
+        />
         <Link
           href="/"
           aria-label="AEOIX home"
-          className="flex items-center gap-3"
+          className="relative flex items-center gap-3"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(200,245,56,0.95),rgba(177,224,35,0.95))] shadow-[0_10px_30px_rgba(200,245,56,0.22)] transition-transform duration-300 hover:scale-[1.04]">
             <Image
@@ -56,7 +56,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <ul className="hidden items-center gap-2 md:flex">
+        <ul className="relative hidden items-center gap-2 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -69,7 +69,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="relative flex items-center gap-2">
           <Link
             href="https://app.aeoix.com"
             target="_blank"
