@@ -26,7 +26,7 @@ export function Navbar() {
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
       <div
-        className={`mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 md:px-6 transition-[background,border,shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        className={`mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-4 md:px-6 transition-[background,border,shadow,backdrop-filter] duration-300 ease-out ${
           isScrolled
             ? "border border-white/10 bg-[rgba(8,10,16,0.72)] shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-2xl"
             : "border border-transparent bg-transparent shadow-none backdrop-blur-none"
