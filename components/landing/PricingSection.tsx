@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import Link from "next/link";
+
+import { Reveal } from "./Reveal";
 
 const plans = [
   {
@@ -8,7 +8,7 @@ const plans = [
     price: "$97",
     originalPrice: "$149",
     period: "/month",
-    discount: "35% OFF — LAUNCH DEAL",
+    discount: "35% off",
     features: [
       "50 AI prompts / month",
       "3 AI engines tracked",
@@ -17,15 +17,15 @@ const plans = [
       "CSV export",
     ],
     cta: "Start free trial",
-    ctaVariant: "outline" as const,
     featured: false,
+    badge: null,
   },
   {
     name: "Growth",
     price: "$194",
     originalPrice: "$299",
     period: "/month",
-    discount: "35% OFF — LAUNCH DEAL",
+    discount: "35% off",
     features: [
       "250 AI prompts / month",
       "All AI engines tracked",
@@ -35,9 +35,8 @@ const plans = [
       "API access",
     ],
     cta: "Start free trial",
-    ctaVariant: "accent" as const,
     featured: true,
-    badge: "Most Popular",
+    badge: "Most popular",
   },
   {
     name: "Enterprise",
@@ -53,126 +52,136 @@ const plans = [
       "SSO + compliance",
     ],
     cta: "Contact sales",
-    ctaVariant: "outline" as const,
     featured: false,
+    badge: null,
   },
 ];
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="px-6 md:px-12 py-20 max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-10">
-        <p className="text-white/30 text-xs font-mono uppercase tracking-widest mb-3">
-          Pricing
-        </p>
-        <h2 className="text-white font-bold text-[clamp(28px,4vw,48px)] leading-[1.1] tracking-[-0.03em] mb-3">
-          Transparent pricing.{" "}
-          <span className="text-white/40">No surprises.</span>
-        </h2>
-        <p className="text-white/40 text-sm md:text-base max-w-lg leading-relaxed">
-          Launch deal active — all plans discounted 35%. 7-day free trial.
-          Cancel anytime.
-        </p>
-      </div>
+    <section id="pricing" className="mx-auto max-w-6xl px-6 py-20 md:px-12">
+      <Reveal>
+        <div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <div
+                className="h-px w-7 rounded-full"
+                style={{ background: "var(--accent-lime)" }}
+              />
+              <p className="section-kicker">Pricing</p>
+            </div>
+            <h2 className="text-[clamp(32px,4vw,56px)] font-semibold leading-[1.02] tracking-[-0.05em] text-white">
+              Transparent pricing.
+              <span className="block text-white/40">No surprises, ever.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-7 text-white/45 md:text-base">
+            Cancel anytime. Launch pricing won&apos;t last — lock it in now.
+          </p>
+        </div>
+      </Reveal>
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-3">
-        {plans.map((plan) => (
-          <div
-            key={plan.name}
-            className={`relative rounded-2xl border flex flex-col p-7 ${
-              plan.featured
-                ? "border-[#c8f538]/30 bg-[#111111]"
-                : "border-white/[0.07] bg-[#0d0d0d]"
-            }`}
-          >
-            {/* Featured badge */}
-            {plan.badge && (
-              <div className="absolute -top-px left-1/2 -translate-x-1/2">
-                <span className="bg-[#c8f538] text-black text-[10px] font-semibold font-mono px-3 py-1 rounded-b-lg whitespace-nowrap tracking-wide uppercase">
-                  {plan.badge}
-                </span>
+      <div className="grid gap-4 md:grid-cols-3 md:items-center">
+        {plans.map((plan, index) => (
+          <Reveal key={plan.name} delay={index * 90}>
+            <div
+              className={`panel-shell interactive-card group relative flex flex-col rounded-[32px] p-7 ${
+                plan.featured
+                  ? "border-[#c8f538]/28 md:-my-4 md:rounded-[36px] md:p-9 md:shadow-[0_0_80px_rgba(200,245,56,0.12)]"
+                  : ""
+              }`}
+            >
+              {/* Featured: permanent subtle lime tint */}
+              {plan.featured && (
+                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(200,245,56,0.06),transparent)]" />
+              )}
+
+              {/* Badge or spacer */}
+              <div className="relative mb-5 h-6">
+                {plan.badge && (
+                  <span className="inline-flex rounded-full bg-[#c8f538] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-black shadow-[0_0_24px_rgba(200,245,56,0.38)]">
+                    {plan.badge}
+                  </span>
+                )}
               </div>
-            )}
 
-            {/* Plan name */}
-            <span className="text-white/30 text-[11px] font-mono uppercase tracking-widest block mb-5 mt-2">
-              {plan.name}
-            </span>
+              {/* Plan name */}
+              <p className="section-kicker mb-4">{plan.name}</p>
 
-            {/* Price */}
-            <div className="mb-1">
-              <div className="flex items-baseline gap-1">
-                <span className="text-white font-bold text-5xl tracking-[-0.04em] leading-none">
+              {/* Price */}
+              <div className="flex items-end gap-2">
+                <span className="text-5xl font-semibold tracking-[-0.06em] text-white">
                   {plan.price}
                 </span>
                 {plan.period && (
-                  <span className="text-white/30 text-sm font-normal">
+                  <span className="pb-2 text-sm text-white/30">
                     {plan.period}
                   </span>
                 )}
               </div>
-            </div>
 
-            {/* Original price */}
-            {plan.originalPrice && (
-              <p className="text-white/25 text-xs font-mono line-through mb-2">
-                was {plan.originalPrice}
-              </p>
-            )}
-
-            {/* Discount badge */}
-            {plan.discount && (
-              <div className="inline-flex mb-6">
-                <span className="text-[#c8f538] text-[10px] font-mono bg-[#c8f538]/10 px-2.5 py-1 rounded tracking-wide uppercase">
-                  {plan.discount}
-                </span>
+              {/* Was + discount — same row */}
+              <div className="mt-2.5 flex min-h-[22px] flex-wrap items-center gap-2.5">
+                {plan.originalPrice && (
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/22 line-through">
+                    was {plan.originalPrice}
+                  </span>
+                )}
+                {plan.discount && (
+                  <span className="accent-pill inline-flex rounded-full px-2.5 py-0.5 text-[10px] uppercase tracking-[0.18em]">
+                    {plan.discount}
+                  </span>
+                )}
               </div>
-            )}
 
-            {!plan.discount && <div className="mb-6 h-6" />}
+              <div className="my-6 h-px bg-white/[0.07]" />
 
-            {/* Divider */}
-            <div className="h-px bg-white/[0.07] mb-6" />
+              {/* Features */}
+              <ul className="mb-8 flex-1 space-y-3.5">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-center gap-3 text-sm leading-6 text-white/55"
+                  >
+                    <span
+                      className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold ${
+                        plan.featured
+                          ? "bg-[#c8f538]/15 text-[#c8f538]"
+                          : "bg-white/[0.06] text-white/35"
+                      }`}
+                    >
+                      ✓
+                    </span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
-            {/* Features */}
-            <ul className="space-y-3.5 flex-1 mb-7">
-              {plan.features.map((feature) => (
-                <li key={feature} className="flex items-center gap-3 text-sm text-white/50">
-                  <Check
-                    size={13}
-                    className={plan.featured ? "text-[#c8f538] flex-shrink-0" : "text-white/25 flex-shrink-0"}
-                  />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA */}
-            <Button
-              variant={plan.ctaVariant}
-              size="lg"
-              className={`w-full rounded-xl ${
-                plan.featured
-                  ? "bg-[#c8f538] text-black hover:opacity-90 border-0"
-                  : "border-white/15 text-white hover:bg-white/5"
-              }`}
-              asChild
-            >
-              <Link href={plan.name === "Enterprise" ? "mailto:enterprise@aeoix.com" : "#cta"}>
+              {/* CTA */}
+              <Link
+                href={
+                  plan.name === "Enterprise"
+                    ? "mailto:enterprise@aeoix.com"
+                    : "#cta"
+                }
+                className={`button-shine inline-flex items-center justify-center rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-0.5 ${
+                  plan.featured
+                    ? "bg-[#c8f538] text-black shadow-[0_14px_36px_rgba(200,245,56,0.24)]"
+                    : "border border-white/10 bg-white/[0.03] text-white/70 hover:border-white/20 hover:text-white/90"
+                }`}
+              >
                 {plan.cta}
               </Link>
-            </Button>
-          </div>
+            </div>
+          </Reveal>
         ))}
       </div>
 
-      {/* Fine print */}
-      <p className="text-center text-white/20 text-[11px] font-mono mt-5 tracking-wide">
-        Pricing in USD · EUR and GBP also available · Auto-detected at checkout ·
-        No credit card required
-      </p>
+      <Reveal delay={240}>
+        <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/18">
+          Pricing in USD · EUR &amp; GBP at checkout · No credit card required
+        </p>
+      </Reveal>
     </section>
   );
 }

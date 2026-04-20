@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function IntegrationsMockup() {
   const integrations = [
     { name: "Ahrefs", color: "#FF6B35", letter: "A" },
@@ -37,7 +39,13 @@ export function IntegrationsMockup() {
 
           {/* Hub icon */}
           <div className="w-10 h-10 rounded-xl bg-[#c8f538] flex items-center justify-center mx-auto relative z-10">
-            <span className="text-black text-sm font-bold font-mono">A</span>
+            <Image
+              src="/logo.png"
+              alt="A"
+              width={24}
+              height={24}
+              className="w-6 h-6 rounded-sm"
+            />
           </div>
         </div>
       </div>

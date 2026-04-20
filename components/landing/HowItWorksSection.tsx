@@ -1,66 +1,69 @@
+import { Reveal } from "./Reveal";
+
 const steps = [
   {
     number: "01",
-    label: "ANALYZE",
+    label: "Analyze",
     title: "See where you stand",
     description:
-      "Your domain gets scanned across 40+ AI engines. We capture every mention, recommendation, and source citation — mapped to your competitors.",
+      "Scan your brand across 40+ AI engines, capture mentions and citations, then benchmark against the competitors already showing up.",
   },
   {
     number: "02",
-    label: "DIAGNOSE",
-    title: "Understand the gap",
+    label: "Diagnose",
+    title: "Find the actual gap",
     description:
-      "Our recommendation engine identifies exactly which publishers, topics, and mentions are pushing your competitors ahead — and what will flip that.",
+      "Surface the topics, publishers, and trust signals creating the difference between your visibility and theirs.",
   },
   {
     number: "03",
-    label: "EXECUTE",
-    title: "Place & publish fast",
+    label: "Execute",
+    title: "Publish with more precision",
     description:
-      "Browse the marketplace, filter by AI-impact score, and contact publishers directly. No middleman. No 3-week agency turnaround.",
+      "Use the marketplace and filters to move toward the placements most likely to shift ranking coverage quickly.",
   },
   {
     number: "04",
-    label: "TRACK",
-    title: "Watch rankings move",
+    label: "Track",
+    title: "Watch rankings respond",
     description:
-      "Every placement gets tracked. See how your AI visibility score responds — and double down on what works with one click.",
+      "Measure which actions change your visibility score so the next move gets smarter rather than louder.",
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section id="how" className="px-6 md:px-12 py-20 max-w-6xl mx-auto">
-      <div className="mb-10">
-        <p className="text-white/30 text-xs font-mono uppercase tracking-widest mb-3">
-          Process
-        </p>
-        <h2 className="text-white font-bold text-[clamp(28px,4vw,48px)] leading-[1.1] tracking-[-0.03em]">
-          From invisible{" "}
-          <span className="text-white/40">to #1 ranked.</span>
-        </h2>
-      </div>
-
-      <div className="grid md:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
-        {steps.map((step) => (
-          <div
-            key={step.number}
-            className="bg-[#0d0d0d] p-7 group hover:bg-[#111111] transition-colors duration-300 relative"
-          >
-            {/* Top accent line on hover */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#c8f538] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-t" />
-
-            <span className="text-white/20 text-[10px] font-mono tracking-widest block mb-5">
-              {step.number} / {step.label}
-            </span>
-            <h3 className="text-white text-base font-semibold tracking-tight mb-3">
-              {step.title}
-            </h3>
-            <p className="text-white/40 text-xs leading-relaxed">
-              {step.description}
-            </p>
+    <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:px-12">
+      <Reveal>
+        <div className="mb-10">
+          <div className="mb-4 flex items-center gap-3">
+            <div
+              className="h-px w-7 rounded-full"
+              style={{ background: "var(--accent-lime)" }}
+            />
+            <p className="section-kicker">Process</p>
           </div>
+          <h2 className="text-[clamp(32px,4vw,56px)] font-semibold leading-[1.02] tracking-[-0.05em] text-white">
+            From invisible
+            <span className="block text-white/40">to convincingly ranked.</span>
+          </h2>
+        </div>
+      </Reveal>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {steps.map((step, index) => (
+          <Reveal key={step.number} delay={index * 90}>
+            <div className="panel-shell interactive-card group h-full rounded-[30px] p-6">
+              <div className="mb-10 flex items-center justify-between">
+                <span className="section-kicker">{step.number}</span>
+                <span className="rounded-full border border-white/8 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/35 transition-colors duration-300 group-hover:border-[#c8f538]/18 group-hover:text-[#c8f538]">
+                  {step.label}
+                </span>
+              </div>
+              <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{step.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/46">{step.description}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

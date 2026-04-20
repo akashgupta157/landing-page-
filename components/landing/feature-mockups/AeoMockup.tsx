@@ -6,7 +6,7 @@ export function AeoMockup() {
         <span className="text-white/40 text-[10px] font-mono">Today</span>
         <div className="flex gap-1">
           <div className="w-12 h-4 rounded bg-[#c8f538]/20 border border-[#c8f538]/30" />
-          <div className="w-8 h-4 rounded bg-white/[0.04]" />
+          <div className="w-8 h-4 rounded bg-white/4" />
         </div>
       </div>
 
@@ -17,7 +17,10 @@ export function AeoMockup() {
           { label: "Mentions", val: "18.4" },
           { label: "Score Δ", val: "+12%" },
         ].map((s) => (
-          <div key={s.label} className="bg-white/[0.03] rounded-lg p-2 border border-white/[0.04]">
+          <div
+            key={s.label}
+            className="bg-white/3 rounded-lg p-2 border border-white/4"
+          >
             <div className="text-white/30 text-[9px] mb-0.5">{s.label}</div>
             <div className="text-white text-xs font-semibold">{s.val}</div>
           </div>
@@ -55,10 +58,14 @@ export function AeoMockup() {
       ].map((row) => (
         <div
           key={row.engine}
-          className="flex items-center justify-between py-1 border-t border-white/[0.04]"
+          className="flex items-center justify-between py-1 border-t border-white/4"
         >
-          <span className="text-white/40 text-[10px] font-mono">{row.engine}</span>
-          <span className={`text-[10px] font-mono ${row.up ? "text-[#c8f538]" : "text-white/30"}`}>
+          <span className="text-white/40 text-[10px] font-mono">
+            {row.engine}
+          </span>
+          <span
+            className={`text-[10px] font-mono ${row.up ? "text-[#c8f538]" : "text-white/30"}`}
+          >
             {row.rank}
           </span>
         </div>

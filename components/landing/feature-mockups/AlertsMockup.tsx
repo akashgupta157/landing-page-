@@ -38,7 +38,7 @@ export function AlertsMockup() {
             <div className="text-white text-[11px] font-medium mb-0.5">{alert.title}</div>
             <div className="text-white/40 text-[10px] leading-relaxed truncate">{alert.body}</div>
           </div>
-          <span className="text-white/20 text-[9px] font-mono flex-shrink-0">{alert.time}</span>
+          <span className="text-white/20 text-[9px] font-mono shrink-0">{alert.time}</span>
         </div>
       ))}
     </div>

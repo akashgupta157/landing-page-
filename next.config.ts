@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "favicon.vemetric.com",
+      },
+    ],
+  },
+  allowedDevOrigins: [
+    'enquiries-tub-march-heaven.trycloudflare.com',
+  ],
 };
 
 export default nextConfig;

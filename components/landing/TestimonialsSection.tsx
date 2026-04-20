@@ -1,8 +1,10 @@
+import { Reveal } from "./Reveal";
+
 const testimonials = [
   {
     quote:
       "We finally understood why our competitors kept showing up in ChatGPT. The publisher recommendations flipped that within 8 weeks.",
-    highlight: "why our competitors kept showing up in ChatGPT",
+    highlight: "publisher recommendations",
     name: "Head of Marketing",
     role: "SaaS startup, Series A",
     initials: "HM",
@@ -17,8 +19,8 @@ const testimonials = [
   },
   {
     quote:
-      "5× more traffic from AI search in three months. The source analysis was the game-changer — we finally knew which placements to prioritize.",
-    highlight: "The source analysis was the game-changer",
+      "5x more traffic from AI search in three months. The source analysis was the game-changer because we knew which placements to prioritize.",
+    highlight: "source analysis",
     name: "CMO",
     role: "E-commerce brand, $8M ARR",
     initials: "CM",
@@ -27,54 +29,72 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="px-6 md:px-12 py-20 max-w-6xl mx-auto">
-      <div className="mb-10">
-        <p className="text-white/30 text-xs font-mono uppercase tracking-widest mb-3">
-          What teams say
-        </p>
-        <h2 className="text-white font-bold text-[clamp(28px,4vw,48px)] leading-[1.1] tracking-[-0.03em]">
-          Results speak louder.
-        </h2>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-3">
-        {testimonials.map((t) => (
-          <div
-            key={t.initials}
-            className="rounded-2xl border border-white/[0.07] bg-[#0d0d0d] p-6 flex flex-col"
-          >
-            {/* Quote mark */}
-            <div className="text-white/10 text-4xl font-serif leading-none mb-4 select-none">
-              &ldquo;
+    <section
+      id="testimonials"
+      className="mx-auto max-w-6xl px-6 py-20 md:px-12"
+    >
+      <Reveal>
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <div
+                className="h-px w-7 rounded-full"
+                style={{ background: "var(--accent-lime)" }}
+              />
+              <p className="section-kicker">What teams say</p>
             </div>
-
-            {/* Quote with highlight */}
-            <p className="text-white/50 text-sm leading-relaxed flex-1 mb-6 italic">
-              {t.quote.split(t.highlight).map((part, i, arr) =>
-                i < arr.length - 1 ? (
-                  <span key={i}>
-                    {part}
-                    <strong className="text-white not-italic font-medium">
-                      {t.highlight}
-                    </strong>
-                  </span>
-                ) : (
-                  <span key={i}>{part}</span>
-                )
-              )}
-            </p>
-
-            {/* Author */}
-            <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-              <div className="w-8 h-8 rounded-full bg-white/[0.06] border border-white/[0.1] flex items-center justify-center flex-shrink-0">
-                <span className="text-white/50 text-[10px] font-mono">{t.initials}</span>
-              </div>
-              <div>
-                <p className="text-white text-xs font-medium">{t.name}</p>
-                <p className="text-white/30 text-[10px] font-mono">{t.role}</p>
-              </div>
-            </div>
+            <h2 className="text-[clamp(32px,4vw,56px)] font-semibold leading-[1.02] tracking-[-0.05em] text-white">
+              Proof with a little more
+              <span className="block text-white/40">presence and polish.</span>
+            </h2>
           </div>
+          <p className="max-w-lg text-sm leading-7 text-white/46 md:text-base">
+            This section now reads more like social proof on a modern product
+            site: stronger card framing, cleaner author blocks, and enough
+            motion to feel alive.
+          </p>
+        </div>
+      </Reveal>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <Reveal key={testimonial.initials} delay={index * 90}>
+            <div className="panel-shell interactive-card flex h-full flex-col rounded-[32px] p-6">
+              <div className="mb-5 text-5xl leading-none text-white/10">
+                &ldquo;
+              </div>
+              <p className="flex-1 text-sm leading-7 text-white/54">
+                {testimonial.quote
+                  .split(testimonial.highlight)
+                  .map((part, partIndex, array) =>
+                    partIndex < array.length - 1 ? (
+                      <span key={partIndex}>
+                        {part}
+                        <strong className="font-medium text-white">
+                          {testimonial.highlight}
+                        </strong>
+                      </span>
+                    ) : (
+                      <span key={partIndex}>{part}</span>
+                    ),
+                  )}
+              </p>
+
+              <div className="mt-8 flex items-center gap-3 border-t border-white/8 pt-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] font-mono text-[11px] text-white/55">
+                  {testimonial.initials}
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-white">
+                    {testimonial.name}
+                  </p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

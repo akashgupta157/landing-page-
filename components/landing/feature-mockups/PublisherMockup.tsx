@@ -1,12 +1,12 @@
 export function PublisherMockup() {
   return (
     <div
-      className="w-40 rounded-2xl border border-white/[0.08] bg-[#111111] overflow-hidden mx-auto"
+      className="w-40 rounded-2xl border border-white/8 bg-[#111111] overflow-hidden mx-auto"
       style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.5)" }}
     >
       {/* Phone notch */}
       <div className="flex justify-center pt-3 pb-2">
-        <div className="w-12 h-1 rounded-full bg-white/[0.1]" />
+        <div className="w-12 h-1 rounded-full bg-white/10" />
       </div>
 
       {/* App header */}
@@ -26,7 +26,7 @@ export function PublisherMockup() {
           <div
             key={pub.name}
             className={`flex items-center justify-between px-2.5 py-2 rounded-lg ${
-              pub.active ? "bg-[#c8f538]/10 border border-[#c8f538]/20" : "bg-white/[0.03]"
+              pub.active ? "bg-[#c8f538]/10 border border-[#c8f538]/20" : "bg-white/3"
             }`}
           >
             <span className={`text-[10px] font-medium ${pub.active ? "text-[#c8f538]" : "text-white/50"}`}>

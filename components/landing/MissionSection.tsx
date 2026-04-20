@@ -1,31 +1,84 @@
+import { Reveal } from "./Reveal";
+
+const missionPoints = [
+  {
+    label: "Unified",
+    body: "One dashboard for mentions, citations, and publisher opportunities — no tab-switching.",
+  },
+  {
+    label: "Actionable",
+    body: "Clearer recommendations instead of agency-style guesswork and vague reports.",
+  },
+  {
+    label: "Fast",
+    body: "A workflow that feels sharp on desktop and actually usable on mobile.",
+  },
+];
+
 export function MissionSection() {
   return (
-    <section className="px-6 md:px-12 py-28 max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
-        {/* Left: big heading */}
-        <div>
-          <h2 className="text-white font-bold text-[clamp(28px,4vw,48px)] leading-[1.1] tracking-[-0.03em]">
-            Who said AI visibility has to be complicated?
-          </h2>
-        </div>
+    <section className="mx-auto max-w-6xl px-6 py-28 md:px-12">
 
-        {/* Right: body copy */}
-        <div className="space-y-4 text-white/50 text-sm md:text-base leading-relaxed">
-          <p>
-            With AEOIX, managing your AI search presence is effortless, empowering,
-            and anything but boring. Our platform brings clarity to your AI rankings,
-            simplifies your publisher outreach, and puts the power of advanced AI
-            visibility right at your fingertips.
-          </p>
-          <p>
-            Say no to scattered tools and agencies designed in the dark ages.{" "}
-            <strong className="text-white font-medium">
-              AEOIX gives you direct access to 100,000+ publishers
-            </strong>{" "}
-            — and shows you exactly which ones to target to outrank your competitors
-            in ChatGPT, Gemini, and every major AI engine.
+      {/* Header — pure typography, no panels */}
+      <Reveal>
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <div
+                className="h-px w-7 rounded-full"
+                style={{ background: "var(--accent-lime)" }}
+              />
+              <p className="section-kicker">Why teams switch</p>
+            </div>
+            <h2 className="text-[clamp(32px,4vw,56px)] font-semibold leading-[1.02] tracking-[-0.05em] text-white">
+              AI visibility should feel
+              <span className="block text-white/40">sharp, calm, and obvious.</span>
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-7 text-white/45 md:text-base">
+            With AEOIX, your AI search presence becomes something your team can
+            actually understand and act on — fast.
           </p>
         </div>
+      </Reveal>
+
+      {/* Three-column cards */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {missionPoints.map((point, index) => (
+          <Reveal key={point.label} delay={index * 80}>
+            <div className="panel-shell interactive-card group relative overflow-hidden rounded-[28px] p-7">
+
+              {/* Top accent bar */}
+              <div
+                className="mb-6 h-px w-full rounded-full opacity-30 transition-opacity duration-300 group-hover:opacity-70"
+                style={{ background: `linear-gradient(90deg, var(--accent-lime), transparent)` }}
+              />
+
+              {/* Ghost number */}
+              <div
+                className="pointer-events-none absolute right-4 top-3 select-none text-[88px] font-black leading-none tracking-[-0.06em] text-white/[0.04] transition-all duration-300 group-hover:text-white/[0.07]"
+                aria-hidden
+              >
+                0{index + 1}
+              </div>
+
+              <div className="relative flex flex-col gap-3">
+                {/* Lime keyword */}
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-[0.24em]"
+                  style={{ color: "var(--accent-lime)" }}
+                >
+                  {point.label}
+                </span>
+
+                {/* Body */}
+                <p className="text-sm leading-6 text-white/50 transition-colors duration-300 group-hover:text-white/70">
+                  {point.body}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
