@@ -59,8 +59,8 @@ export function TestimonialsSection() {
       <div className="grid gap-4 md:grid-cols-3">
         {testimonials.map((testimonial, index) => (
           <Reveal key={testimonial.initials} delay={index * 90}>
-            <div className="panel-shell interactive-card flex h-full flex-col rounded-[32px] p-6">
-              <div className="mb-5 text-5xl leading-none text-white/10">
+            <div className="panel-shell interactive-card group flex h-full flex-col rounded-[32px] p-6">
+              <div className="mb-5 inline-block origin-left text-5xl leading-none text-white/10 transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1 group-hover:text-[#c8f538]/20">
                 &ldquo;
               </div>
               <p className="flex-1 text-sm leading-7 text-white/54">
@@ -81,7 +81,7 @@ export function TestimonialsSection() {
               </p>
 
               <div className="mt-8 flex items-center gap-3 border-t border-white/8 pt-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] font-mono text-[11px] text-white/55">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] font-mono text-[11px] text-white/55 transition-all duration-300 group-hover:border-[#c8f538]/25 group-hover:bg-[#c8f538]/6 group-hover:text-[#c8f538]">
                   {testimonial.initials}
                 </div>
                 <div>

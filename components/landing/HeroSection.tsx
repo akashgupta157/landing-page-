@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { DashboardMockup } from "./DashboardMockup";
 import { Reveal } from "./Reveal";
 import { VerifyEmailModal } from "./VerifyEmailModal";
-import AnimatedHeading from "./AnimatedHeading";
 
 interface MetricResult {
   label: string;
@@ -416,7 +415,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden px-6 pb-0 pt-32 text-center">
+    <section className="relative min-h-screen overflow-hidden px-6 pb-0 pt-32 text-center">
       <div className="hero-grid absolute inset-0 opacity-50" />
       <div className="spot-orb left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 bg-[var(--glow-lime)] animate-pulse-soft" />
       <div className="spot-orb right-[12%] top-24 h-[240px] w-[240px] bg-[var(--glow-blue)]" />
@@ -466,7 +465,7 @@ export function HeroSection() {
 
         <Reveal delay={280}>
           <form
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             className="mx-auto mt-10 w-full max-w-2xl"
           >
             <div className="panel-shell group relative flex flex-col gap-3 rounded-[30px] p-3 md:flex-row md:items-center">

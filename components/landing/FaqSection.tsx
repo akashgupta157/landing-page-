@@ -54,7 +54,9 @@ export function FaqSection() {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-300 hover:bg-white/[0.02]"
               >
-                <span className="pr-4 font-medium text-white">{faq.question}</span>
+                <span className="pr-4 font-medium text-white">
+                  {faq.question}
+                </span>
                 <ChevronDown
                   size={18}
                   className={`shrink-0 text-white/40 transition-transform duration-300 ${
@@ -67,7 +69,9 @@ export function FaqSection() {
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="px-6 pb-6 text-sm leading-7 text-white/55">{faq.answer}</p>
+                <p className="p-6 text-sm leading-7 text-white/55">
+                  {faq.answer}
+                </p>
               </div>
             </div>
           </Reveal>

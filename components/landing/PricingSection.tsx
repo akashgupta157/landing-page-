@@ -138,17 +138,19 @@ export function PricingSection() {
 
               {/* Features */}
               <ul className="mb-8 flex-1 space-y-3.5">
-                {plan.features.map((feature) => (
+                {plan.features.map((feature, featureIndex) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-3 text-sm leading-6 text-white/55"
+                    className="flex items-center gap-3 text-sm leading-6 text-white/55 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white/70"
+                    style={{ transitionDelay: `${featureIndex * 30}ms` }}
                   >
                     <span
-                      className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold ${
+                      className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold transition-all duration-300 group-hover:scale-110 ${
                         plan.featured
-                          ? "bg-[#c8f538]/15 text-[#c8f538]"
-                          : "bg-white/[0.06] text-white/35"
+                          ? "bg-[#c8f538]/15 text-[#c8f538] group-hover:bg-[#c8f538]/25"
+                          : "bg-white/[0.06] text-white/35 group-hover:bg-white/[0.1]"
                       }`}
+                      style={{ transitionDelay: `${featureIndex * 30}ms` }}
                     >
                       ✓
                     </span>

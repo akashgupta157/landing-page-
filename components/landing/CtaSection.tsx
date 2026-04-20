@@ -9,8 +9,11 @@ export function CtaSection() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const clean =
-      domain.replace(/^https?:\/\//, "").replace(/\/.*$/, "") || "yourdomain.com";
-    alert(`Analyzing ${clean}...\n\nYou'd be taken to the loading screen and dashboard.`);
+      domain.replace(/^https?:\/\//, "").replace(/\/.*$/, "") ||
+      "yourdomain.com";
+    alert(
+      `Analyzing ${clean}...\n\nYou'd be taken to the loading screen and dashboard.`,
+    );
   }
 
   return (
@@ -21,7 +24,7 @@ export function CtaSection() {
       <Reveal>
         <div className="panel-shell group relative z-10 mx-auto max-w-5xl rounded-[40px] px-6 py-12 text-center md:px-12 md:py-16">
           <div className="absolute -inset-px rounded-[42px] bg-gradient-to-r from-[#c8f538]/0 via-[#c8f538]/5 to-[#7cc8ff]/0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-          
+
           <p className="section-kicker mb-4">Get Started</p>
           <h2 className="relative text-[clamp(40px,6vw,84px)] font-semibold leading-[0.95] tracking-[-0.06em] text-white">
             The AI Search Revolution
@@ -31,14 +34,19 @@ export function CtaSection() {
           </h2>
 
           <p className="relative mx-auto mt-5 max-w-xl text-base leading-7 text-white/48 md:text-lg">
-            Every day you wait, competitors are getting cited and you're becoming invisible.
-            Start free today.
+            Every day you wait, competitors are getting cited and you're
+            becoming invisible. Start free today.
           </p>
 
-          <form onSubmit={handleSubmit} className="relative mx-auto mt-10 w-full max-w-2xl">
+          <form
+            onSubmit={handleSubmit}
+            className="relative mx-auto mt-10 w-full max-w-2xl"
+          >
             <div className="flex flex-col gap-3 rounded-[30px] border border-white/10 bg-black/14 p-3 md:flex-row transition-all duration-300 focus-within:border-[#c8f538]/30">
               <div className="flex flex-1 items-center rounded-[22px] border border-white/8 bg-white/3 px-4 py-3 transition-all duration-300 focus-within:border-[#c8f538]/20">
-                <span className="pr-2 font-mono text-sm text-white/28">https://</span>
+                <span className="pr-2 font-mono text-sm text-white/28">
+                  https://
+                </span>
                 <input
                   type="text"
                   placeholder="yourdomain.com"

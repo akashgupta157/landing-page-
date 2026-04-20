@@ -24,7 +24,13 @@ const row2 = [
 
 type Company = { name: string; domain: string };
 
-function MarqueeRow({ items, reverse = false }: { items: Company[]; reverse?: boolean }) {
+function MarqueeRow({
+  items,
+  reverse = false,
+}: {
+  items: Company[];
+  reverse?: boolean;
+}) {
   const duped = [...items, ...items, ...items];
   return (
     <div
@@ -43,16 +49,16 @@ function MarqueeRow({ items, reverse = false }: { items: Company[]; reverse?: bo
         {duped.map((c, i) => (
           <div
             key={`${c.name}-${i}`}
-            className="flex shrink-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.025] px-5 py-3.5 transition-all duration-200 hover:border-white/[0.16] hover:bg-white/[0.05] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+            className="group flex shrink-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.025] px-5 py-3.5 transition-all duration-200 hover:border-white/[0.16] hover:bg-white/[0.05] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
           >
             <img
               src={`https://www.google.com/s2/favicons?domain=${c.domain}&sz=128`}
               alt=""
               width={18}
               height={18}
-              className="h-5 w-5 rounded-[5px] opacity-75"
+              className="h-5 w-5 rounded-[5px] opacity-75 transition-all duration-200 group-hover:opacity-100 group-hover:scale-110"
             />
-            <span className="whitespace-nowrap text-sm font-medium text-white/55">
+            <span className="whitespace-nowrap text-sm font-medium text-white/55 transition-colors duration-200 group-hover:text-white/80">
               {c.name}
             </span>
           </div>
