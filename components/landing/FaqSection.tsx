@@ -52,7 +52,7 @@ export function FaqSection() {
             <div className="panel-shell overflow-hidden rounded-[20px] border border-white/8">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-300 hover:bg-white/[0.02]"
+                className="flex w-full cursor-pointer items-center justify-between px-6 py-5 text-left transition-colors duration-300 hover:bg-white/[0.02]"
               >
                 <span className="pr-4 font-medium text-white">
                   {faq.question}

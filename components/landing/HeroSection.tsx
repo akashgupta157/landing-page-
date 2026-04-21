@@ -207,7 +207,7 @@ function ResultScreen({
             </div>
             <button
               onClick={onReset}
-              className="panel-shell interactive-card rounded-[26px] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70"
+              className="panel-shell interactive-card cursor-pointer rounded-[26px] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70"
             >
               Analyze another
             </button>
@@ -269,7 +269,7 @@ function ResultScreen({
             </div>
             <button
               onClick={() => setShowModal(true)}
-              className="button-shine group relative rounded-full bg-[#c8f538] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_14px_36px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
+              className="button-shine cursor-pointer group relative rounded-full bg-[#c8f538] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_14px_36px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
             >
               <span className="relative z-10">Get full report</span>
               <span className="absolute inset-0 rounded-full bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -492,7 +492,7 @@ export function HeroSection() {
 
               <button
                 type="submit"
-                className="button-shine group relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_46px_rgba(200,245,56,0.35)]"
+                className="button-shine cursor-pointer group relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_46px_rgba(200,245,56,0.35)]"
               >
                 <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">
                   Get free report

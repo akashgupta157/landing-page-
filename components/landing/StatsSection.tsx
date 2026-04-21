@@ -63,7 +63,7 @@ const stats = [
   { number: "47%", label: "of searches now answered by AI", gradient: true },
   { number: "12,000+", label: "Brands tracked daily", gradient: false },
   { number: "94%", label: "avg. visibility increase", gradient: true },
-  { number: "6", label: "AI engines monitored", gradient: false },
+  { number: "8", label: "AI engines monitored", gradient: false },
 ];
 
 export function StatsSection() {

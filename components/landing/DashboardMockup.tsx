@@ -315,7 +315,7 @@ function SidebarContent({ onClose }: { onClose?: () => void }) {
         {onClose && (
           <button
             onClick={onClose}
-            className="text-white/40 hover:text-white transition-colors lg:hidden"
+            className="cursor-pointer text-white/40 hover:text-white transition-colors lg:hidden"
           >
             <X size={16} />
           </button>
@@ -505,7 +505,7 @@ export function DashboardMockup() {
             <div className="flex items-center gap-2">
               {/* Hamburger — mobile only */}
               <button
-                className="md:hidden text-white/50 hover:text-white transition-colors"
+                className="cursor-pointer md:hidden text-white/50 hover:text-white transition-colors"
                 onClick={() => setDrawerOpen(true)}
               >
                 <Menu size={16} />

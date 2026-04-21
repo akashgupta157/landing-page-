@@ -58,7 +58,7 @@ export function CtaSection() {
               </div>
               <button
                 type="submit"
-                className="button-shine group/btn relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
+                className="button-shine cursor-pointer group/btn relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
               >
                 <span className="relative z-10">Get vetted publishers</span>
               </button>

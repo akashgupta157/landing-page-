@@ -23,7 +23,7 @@ export default function HomePage() {
 
       {/* Hero — centered heading + domain input + dashboard screenshot */}
       <HeroSection />
-      
+
       <Reveal delay={500} className="mt-14">
         <div className="float-soft relative px-6 mx-auto max-w-6xl">
           <DashboardMockup />
@@ -31,7 +31,9 @@ export default function HomePage() {
       </Reveal>
 
       {/* Trusted by logos */}
-      <TrustedBySection />
+      <div className="relative mx-auto max-w-6xl">
+        <TrustedBySection />
+      </div>
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">

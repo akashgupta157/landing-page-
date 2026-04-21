@@ -35,7 +35,7 @@ export function Navbar() {
         <Link
           href="/"
           aria-label="AEOIX home"
-          className="relative flex items-center gap-3"
+          className="relative cursor-pointer flex items-center gap-3"
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(200,245,56,0.95),rgba(177,224,35,0.95))] shadow-[0_10px_30px_rgba(200,245,56,0.22)] transition-transform duration-300 hover:scale-[1.04]">
             <Image
@@ -61,7 +61,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm text-white/55 transition-all duration-300 hover:bg-white/6 hover:text-white"
+                className="cursor-pointer rounded-full px-4 py-2 text-sm text-white/55 transition-all duration-300 hover:bg-white/6 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -73,7 +73,7 @@ export function Navbar() {
           <Link
             href="https://app.aeoix.com"
             target="_blank"
-            className="button-shine inline-flex items-center rounded-full bg-[#c8f538] px-4 py-2 text-xs font-semibold tracking-[0.18em] text-black shadow-[0_12px_32px_rgba(200,245,56,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(200,245,56,0.3)]"
+            className="button-shine cursor-pointer inline-flex items-center rounded-full bg-[#c8f538] px-4 py-2 text-xs font-semibold tracking-[0.18em] text-black shadow-[0_12px_32px_rgba(200,245,56,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(200,245,56,0.3)]"
           >
             Get Started Now
           </Link>

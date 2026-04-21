@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export function IntegrationsMockup() {
   const integrations = [
-    { name: "Ahrefs", color: "#FF6B35", letter: "A" },
-    { name: "Semrush", color: "#FF642D", letter: "S" },
-    { name: "HubSpot", color: "#FF7A59", letter: "H" },
-    { name: "Slack", color: "#4A154B", letter: "S" },
-    { name: "Stripe", color: "#635BFF", letter: "S" },
-    { name: "Notion", color: "#000000", letter: "N" },
-    { name: "Zapier", color: "#FF4A00", letter: "Z" },
-    { name: "GA4", color: "#E37400", letter: "G" },
-  ];
+    { name: "Ahrefs", color: "#FF6B35", letter: "A", logo: "/ahrefs.com" },
+    { name: "Semrush", color: "#FF642D", letter: "S", logo: "/semrush.com" },
+    { name: "HubSpot", color: "#FF7A59", letter: "H", logo: "/hubspot.com" },
+    { name: "Slack", color: "#4A154B", letter: "S", logo: "/slack.com" },
+    { name: "Stripe", color: "#635BFF", letter: "S", logo: "/stripe.com" },
+    { name: "Notion", color: "#000000", letter: "N", logo: "/notion.so" },
+    { name: "Zapier", color: "#FF4A00", letter: "Z", logo: "/zapier.com" },
+    { name: "GA4", color: "#E37400", letter: "G", logo: "/google.com" },
+  ] as const;
 
   return (
     <div className="w-full px-2">
@@ -20,7 +20,12 @@ export function IntegrationsMockup() {
           {/* Connection lines */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
-            style={{ top: "-40px", left: "-80px", width: "220px", height: "120px" }}
+            style={{
+              top: "-40px",
+              left: "-80px",
+              width: "220px",
+              height: "120px",
+            }}
             aria-hidden="true"
           >
             {[30, 80, 130, 180].map((x, i) => (
@@ -61,12 +66,13 @@ export function IntegrationsMockup() {
               className="w-9 h-9 rounded-xl flex items-center justify-center border border-white/[0.08]"
               style={{ backgroundColor: `${integration.color}22` }}
             >
-              <span
-                className="text-xs font-bold"
-                style={{ color: integration.color }}
-              >
-                {integration.letter}
-              </span>
+              <Image
+                src={`https://favicon.vemetric.com/${integration.logo}`}
+                alt={integration.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-sm"
+              />
             </div>
             <span className="text-white/30 text-[9px] font-mono text-center">
               {integration.name}

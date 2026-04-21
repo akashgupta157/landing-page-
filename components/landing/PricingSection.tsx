@@ -5,16 +5,17 @@ import { Reveal } from "./Reveal";
 const plans = [
   {
     name: "Starter",
-    price: "$97",
-    originalPrice: "$149",
+    price: "$89",
+    originalPrice: "$199",
     period: "/month",
     discount: "35% off",
     features: [
-      "50 AI prompts / month",
+      "1 domain monitored",
       "3 AI engines tracked",
-      "1 project",
+      "Weekly AEO reports",
+      "Basic recommendations",
+      "1 project access",
       "Publisher network access",
-      "CSV export",
     ],
     cta: "Start free trial",
     featured: false,
@@ -22,34 +23,36 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "$194",
-    originalPrice: "$299",
+    price: "$219",
+    originalPrice: "$349",
     period: "/month",
     discount: "35% off",
     features: [
-      "250 AI prompts / month",
-      "All AI engines tracked",
-      "5 projects",
-      "Competitor analysis",
-      "Publisher recommendations engine",
-      "API access",
+      " 5 domains monitored",
+      " All 8 AI engines tracked",
+      " Daily AEO reports",
+      " Advanced content optimizer",
+      " 10 competitors tracked",
+      " Slack & email alerts",
+      " Publisher network access",
     ],
     cta: "Start free trial",
     featured: true,
     badge: "Most popular",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    originalPrice: null,
-    period: null,
-    discount: null,
+    name: "Agency",
+    price: "$399",
+    originalPrice: "$599",
+    period: "/month",
+    discount: "35% off",
     features: [
-      "Unlimited prompts",
-      "Unlimited projects",
-      "Custom reporting",
-      "Dedicated success manager",
-      "SSO + compliance",
+      " Unlimited domains",
+      " All 8 AI engines tracked",
+      " Real-time monitoring",
+      " White-label reports",
+      " Unlimited competitors",
+      " Full API access",
     ],
     cta: "Contact sales",
     featured: false,
@@ -59,7 +62,10 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12">
+    <section
+      id="pricing"
+      className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12"
+    >
       <Reveal>
         <div className="mb-14 xl:mb-20 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>

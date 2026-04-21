@@ -187,7 +187,7 @@ function ChatMockup() {
               Highest overlap with competitor citations and the shortest route to lift.
             </p>
           </div>
-          <button className="button-shine rounded-full border border-[#c8f538]/20 bg-[#c8f538]/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c8f538] transition-transform duration-300 hover:-translate-y-0.5">
+          <button className="button-shine cursor-pointer rounded-full border border-[#c8f538]/20 bg-[#c8f538]/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c8f538] transition-transform duration-300 hover:-translate-y-0.5">
             Ask AI
           </button>
         </div>

@@ -51,7 +51,7 @@ export function VerifyEmailModal({
           {/* Google Sign In */}
           <Button
             onClick={onGoogleContinue}
-            className="w-full flex items-center justify-center gap-3 bg-white text-black font-semibold hover:bg-white/90 py-6"
+            className="cursor-pointer w-full flex items-center justify-center gap-3 bg-white text-black font-semibold hover:bg-white/90 py-6"
           >
             <svg viewBox="0 0 24 24" className="w-5 h-5">
               <path
