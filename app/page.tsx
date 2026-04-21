@@ -37,7 +37,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* AI Engines coverage */}
@@ -45,7 +45,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* "Who said AI visibility has to be complicated?" */}
@@ -53,7 +53,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* "Everything you need. Nothing you don't." — feature card grid */}
@@ -61,7 +61,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* "Meet Recommendations" — forecast + chat AI panels */}
@@ -69,7 +69,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* Stats row */}
@@ -80,7 +80,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* Testimonials */}
@@ -88,7 +88,7 @@ export default function HomePage() {
 
       {/* Horizontal divider */}
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="h-px bg-white/6" />
+        <div className="h-px bg-white/8" />
       </div>
 
       {/* Pricing */}
@@ -98,7 +98,7 @@ export default function HomePage() {
       <FaqSection />
 
       {/* Full-width divider */}
-      <div className="h-px bg-white/6" />
+      <div className="h-px bg-white/8" />
 
       {/* Final CTA */}
       <CtaSection />

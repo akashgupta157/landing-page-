@@ -67,7 +67,7 @@ export function HowItWorksSection() {
               <h3 className="text-xl font-semibold tracking-[-0.03em] text-white transition-colors duration-300 group-hover:text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-white/46 transition-colors duration-300 group-hover:text-white/58">
+              <p className="mt-3 text-sm leading-6 text-white/60 transition-colors duration-300 group-hover:text-white/75">
                 {step.description}
               </p>
             </div>

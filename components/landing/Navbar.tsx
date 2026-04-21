@@ -46,14 +46,9 @@ export function Navbar() {
               className="h-6 w-6"
             />
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="text-sm font-semibold tracking-[0.22em] text-white">
-              AEOIX
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.24em] text-white/35">
-              AI visibility OS
-            </span>
-          </div>
+          <span className="text-sm font-semibold tracking-[0.2em] text-white">
+            AEOIX
+          </span>
         </Link>
 
         <ul className="relative hidden items-center gap-2 md:flex">
@@ -61,7 +56,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="cursor-pointer rounded-full px-4 py-2 text-sm text-white/55 transition-all duration-300 hover:bg-white/6 hover:text-white"
+                className="cursor-pointer rounded-full px-4 py-2 text-sm text-white/68 transition-all duration-300 hover:bg-white/6 hover:text-white"
               >
                 {link.label}
               </Link>
@@ -69,13 +64,20 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="relative flex items-center gap-2">
+        <div className="relative flex items-center gap-3">
           <Link
             href="https://app.aeoix.com"
             target="_blank"
-            className="button-shine cursor-pointer inline-flex items-center rounded-full bg-[#c8f538] px-4 py-2 text-xs font-semibold tracking-[0.18em] text-black shadow-[0_12px_32px_rgba(200,245,56,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(200,245,56,0.3)]"
+            className="hidden cursor-pointer rounded-full px-4 py-2 text-sm text-white/68 transition-all duration-300 hover:bg-white/6 hover:text-white md:inline-flex"
           >
-            Get Started Now
+            Sign in
+          </Link>
+          <Link
+            href="https://app.aeoix.com"
+            target="_blank"
+            className="button-shine cursor-pointer inline-flex items-center rounded-full bg-[#c8f538] px-4 py-2 text-xs font-semibold tracking-[0.1em] text-black shadow-[0_12px_32px_rgba(200,245,56,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(200,245,56,0.3)]"
+          >
+            Get Started
           </Link>
         </div>
       </div>

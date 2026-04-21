@@ -81,7 +81,7 @@ export function PricingSection() {
               <span className="block text-white/40">No surprises, ever.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-7 text-white/45 md:text-base">
+          <p className="max-w-sm text-sm leading-7 text-white/62 md:text-base">
             Cancel anytime. Launch pricing won&apos;t last — lock it in now.
           </p>
         </div>
@@ -147,7 +147,7 @@ export function PricingSection() {
                 {plan.features.map((feature, featureIndex) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-3 text-sm leading-6 text-white/55 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white/70"
+                    className="flex items-center gap-3 text-sm leading-6 text-white/65 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white/82"
                     style={{ transitionDelay: `${featureIndex * 30}ms` }}
                   >
                     <span
@@ -172,7 +172,7 @@ export function PricingSection() {
                     ? "mailto:enterprise@aeoix.com"
                     : "#cta"
                 }
-                className={`button-shine inline-flex items-center justify-center rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`button-shine inline-flex items-center justify-center rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 ${
                   plan.featured
                     ? "bg-[#c8f538] text-black shadow-[0_14px_36px_rgba(200,245,56,0.24)]"
                     : "border border-white/10 bg-white/[0.03] text-white/70 hover:border-white/20 hover:text-white/90"
@@ -186,9 +186,10 @@ export function PricingSection() {
       </div>
 
       <Reveal delay={240}>
-        <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/18">
+        <p className="mt-6 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-white/32">
           Pricing in USD · EUR &amp; GBP at checkout · No credit card required
         </p>
+
       </Reveal>
     </section>
   );

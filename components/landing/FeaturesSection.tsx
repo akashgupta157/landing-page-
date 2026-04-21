@@ -86,7 +86,7 @@ export function FeaturesSection() {
               </span>
             </h2>
           </div>
-          <p className="max-w-lg text-sm leading-7 text-white/48 md:text-base">
+          <p className="max-w-lg text-sm leading-7 text-white/62 md:text-base">
             From visibility analytics to research, action items, and team
             alerts—Aeoix keeps the loop tight: find the gap, decide fast,
             execute, and measure the lift.
@@ -123,7 +123,7 @@ export function FeaturesSection() {
                 <h3 className="text-lg font-semibold tracking-[-0.03em] text-white transition-colors duration-300 group-hover:text-[#c8f538]">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-white/46">
+                <p className="mt-2 text-sm leading-6 text-white/60">
                   {feature.description}
                 </p>
 
@@ -131,7 +131,7 @@ export function FeaturesSection() {
                   {feature.bullets.map((bullet, bulletIndex) => (
                     <li
                       key={bullet}
-                      className="flex items-start gap-2 text-sm text-white/56 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-white/70"
+                      className="flex items-start gap-2 text-sm text-white/65 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-white/82"
                       style={{ transitionDelay: `${bulletIndex * 40}ms` }}
                     >
                       <span

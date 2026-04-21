@@ -32,7 +32,7 @@ export function AiEnginesSection() {
               <span className="block text-white/40">One Dashboard.</span>
             </h2>
           </div>
-          <p className="max-w-lg text-sm leading-7 text-white/48 md:text-base">
+          <p className="max-w-lg text-sm leading-7 text-white/62 md:text-base">
             Stop guessing where your brand shows up. AEOIX monitors all major AI answer engines
             and tells you exactly when and how your content gets cited.
           </p>
@@ -49,7 +49,7 @@ export function AiEnginesSection() {
             >
               8+
             </div>
-            <p className="mt-3 text-sm leading-6 text-white/40">
+            <p className="mt-3 text-sm leading-6 text-white/55">
               AI answer engines tracked and growing every quarter.
             </p>
             <div className="mt-6 flex items-center gap-2">
@@ -57,7 +57,7 @@ export function AiEnginesSection() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
-              <span className="text-xs text-emerald-400/80 tracking-wide uppercase">Live monitoring</span>
+              <span className="text-xs text-emerald-400 tracking-wide uppercase">Live monitoring</span>
             </div>
           </div>
         </Reveal>
@@ -88,8 +88,8 @@ export function AiEnginesSection() {
                 {/* text */}
                 <div className="relative flex flex-col gap-0.5">
                   <span className="text-sm font-medium text-white">{engine.name}</span>
-                  <span className="flex items-center gap-1.5 text-[11px] text-white/35">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/60" />
+                  <span className="flex items-center gap-1.5 text-[11px] text-white/48">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/80" />
                     Tracked
                   </span>
                 </div>

@@ -33,7 +33,7 @@ export function CtaSection() {
             </span>
           </h2>
 
-          <p className="relative mx-auto mt-5 max-w-xl text-base leading-7 text-white/48 md:text-lg">
+          <p className="relative mx-auto mt-5 max-w-xl text-base leading-7 text-white/65 md:text-lg">
             Every day you wait, competitors are getting cited and you're
             becoming invisible. Start free today.
           </p>
@@ -52,20 +52,20 @@ export function CtaSection() {
                   placeholder="yourdomain.com"
                   value={domain}
                   onChange={(e) => setDomain(e.target.value)}
-                  className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-white/28 md:text-base transition-colors duration-300 focus:text-white"
+                  className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-white/40 md:text-base transition-colors duration-300 focus:text-white"
                   aria-label="Your domain"
                 />
               </div>
               <button
                 type="submit"
-                className="button-shine cursor-pointer group/btn relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
+                className="button-shine cursor-pointer group/btn relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.1em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(200,245,56,0.35)]"
               >
                 <span className="relative z-10">Get vetted publishers</span>
               </button>
             </div>
           </form>
 
-          <div className="relative mt-5 flex flex-wrap items-center justify-center gap-3 text-xs text-white/24">
+          <div className="relative mt-5 flex flex-wrap items-center justify-center gap-3 text-xs text-white/42">
             <span>7-day free trial</span>
             <span className="h-1 w-1 rounded-full bg-white/16" />
             <span>No credit card</span>

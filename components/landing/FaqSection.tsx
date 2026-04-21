@@ -59,7 +59,7 @@ export function FaqSection() {
                 </span>
                 <ChevronDown
                   size={18}
-                  className={`shrink-0 text-white/40 transition-transform duration-300 ${
+                  className={`shrink-0 text-white/52 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />
@@ -69,7 +69,7 @@ export function FaqSection() {
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
               >
-                <p className="p-6 text-sm leading-7 text-white/55">
+                <p className="p-6 text-sm leading-7 text-white/68">
                   {faq.answer}
                 </p>
               </div>
