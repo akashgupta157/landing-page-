@@ -12,6 +12,8 @@ import { PricingSection } from "@/components/landing/PricingSection";
 import { FaqSection } from "@/components/landing/FaqSection";
 import { CtaSection } from "@/components/landing/CtaSection";
 import { Footer } from "@/components/landing/Footer";
+import { DashboardMockup } from "@/components/landing/DashboardMockup";
+import { Reveal } from "@/components/landing/Reveal";
 
 export default function HomePage() {
   return (
@@ -21,6 +23,12 @@ export default function HomePage() {
 
       {/* Hero — centered heading + domain input + dashboard screenshot */}
       <HeroSection />
+      
+      <Reveal delay={500} className="mt-14">
+        <div className="float-soft relative px-6 mx-auto max-w-6xl">
+          <DashboardMockup />
+        </div>
+      </Reveal>
 
       {/* Trusted by logos */}
       <TrustedBySection />

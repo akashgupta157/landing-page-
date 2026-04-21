@@ -415,7 +415,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden px-6 pb-0 pt-32 text-center">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pb-0 pt-32 text-center">
       <div className="hero-grid absolute inset-0 opacity-50" />
       <div className="spot-orb left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 bg-[var(--glow-lime)] animate-pulse-soft" />
       <div className="spot-orb right-[12%] top-24 h-[240px] w-[240px] bg-[var(--glow-blue)]" />
@@ -544,9 +544,6 @@ export function HeroSection() {
                 <span className="orbit-dot absolute h-2 w-2 rounded-full bg-[#7cc8ff]" />
               </div>
             </div> */}
-            <div className="float-soft">
-              <DashboardMockup />
-            </div>
           </div>
         </Reveal>
       </div>

@@ -25,6 +25,8 @@ import {
   MessageSquare,
   ChevronDown,
   LayoutDashboard,
+  Menu,
+  X,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -292,14 +294,128 @@ function CustomTooltip({ active, payload, label }: any) {
   );
 }
 
+// ── Sidebar Content (shared between drawer & static sidebar) ──────────────────
+function SidebarContent({ onClose }: { onClose?: () => void }) {
+  return (
+    <div className="flex flex-col h-full p-3">
+      {/* Logo */}
+      <div className="mb-5 flex items-center justify-between px-2 py-1">
+        <div className="flex items-center gap-2">
+          <div className="h-6 w-6 rounded-md bg-[#c8f538] flex items-center justify-center">
+            <span className="text-black font-bold text-[10px]">AX</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="text-white text-xs font-semibold tracking-tight">
+              AEOIX
+            </span>
+            <ChevronDown size={10} className="text-white/30" />
+          </div>
+        </div>
+        {/* Close button — only shown in mobile drawer */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="text-white/40 hover:text-white transition-colors lg:hidden"
+          >
+            <X size={16} />
+          </button>
+        )}
+      </div>
+
+      {/* General */}
+      <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
+        General
+      </div>
+      <nav className="mb-3">
+        {sidebarGeneral.map(({ label, icon: Icon, active }) => (
+          <div
+            key={label}
+            className={`mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default transition-colors ${
+              active
+                ? "bg-white/[0.08] text-white"
+                : "text-white/35 hover:text-white/55"
+            }`}
+          >
+            <Icon size={13} className="shrink-0" />
+            <span>{label}</span>
+          </div>
+        ))}
+      </nav>
+
+      {/* Outreach */}
+      <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
+        Outreach
+      </div>
+      <nav className="mb-3">
+        {sidebarOutreach.map(({ label, icon: Icon }) => (
+          <div
+            key={label}
+            className={`mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default text-white/35 hover:text-white/55 ${
+              label === "Messages" ? "bg-[#1a2340] text-[#6080ff]" : ""
+            }`}
+          >
+            <Icon size={13} className="shrink-0" />
+            <span>{label}</span>
+          </div>
+        ))}
+      </nav>
+
+      {/* Settings */}
+      <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
+        Settings
+      </div>
+      <nav>
+        {sidebarSettings.map(({ label, icon: Icon }) => (
+          <div
+            key={label}
+            className="mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default text-white/35 hover:text-white/55"
+          >
+            <Icon size={13} className="shrink-0" />
+            <span>{label}</span>
+          </div>
+        ))}
+      </nav>
+
+      {/* User */}
+      <div className="mt-auto pt-4 border-t border-white/6 flex items-center gap-2 px-1">
+        <div className="h-7 w-7 rounded-full bg-[#c8f538]/20 border border-[#c8f538]/30 flex items-center justify-center text-[10px] text-[#c8f538] font-bold shrink-0">
+          KR
+        </div>
+        <div className="min-w-0">
+          <div className="text-[10px] text-white/70 truncate font-medium text-left">
+            Karan Rajput
+          </div>
+          <div className="text-[9px] text-white/30 truncate">
+            karan@aeoix.com
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main Component ─────────────────────────────────────────────────────────────
 export function DashboardMockup() {
   const [animated, setAnimated] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setAnimated(true), 300);
     return () => clearTimeout(t);
   }, []);
+
+  // Close drawer on outside click
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const handler = (e: MouseEvent) => {
+      const drawer = document.getElementById("mobile-drawer");
+      if (drawer && !drawer.contains(e.target as Node)) {
+        setDrawerOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [drawerOpen]);
 
   return (
     <div
@@ -318,98 +434,87 @@ export function DashboardMockup() {
         </div>
       </div>
 
-      <div className="flex" style={{ minHeight: 560 }}>
-        {/* ── Sidebar ── */}
-        <aside className="w-48 shrink-0 border-r border-white/6 bg-[#0b0d14] flex flex-col p-3">
-          {/* Logo */}
-          <div className="mb-5 flex items-center gap-2 px-2 py-1">
-            <div className="h-6 w-6 rounded-md bg-[#c8f538] flex items-center justify-center">
-              <span className="text-black font-bold text-[10px]">AX</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <span className="text-white text-xs font-semibold tracking-tight">
-                AEOIX
-              </span>
-              <ChevronDown size={10} className="text-white/30" />
-            </div>
-          </div>
+      {/* ── Layout wrapper ── */}
+      <div className="flex relative" style={{ minHeight: 560 }}>
+        {/* ── Mobile drawer overlay ── */}
+        {drawerOpen && (
+          <div className="fixed inset-0 z-40 bg-black/60 lg:hidden" />
+        )}
 
-          {/* General */}
-          <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
-            General
+        {/* ── Mobile slide-in drawer ── */}
+        <aside
+          id="mobile-drawer"
+          className={`
+            fixed top-0 left-0 h-full z-50 w-52 bg-[#0b0d14] border-r border-white/6
+            transform transition-transform duration-300 ease-in-out
+            lg:hidden
+            ${drawerOpen ? "translate-x-0" : "-translate-x-full"}
+          `}
+        >
+          <SidebarContent onClose={() => setDrawerOpen(false)} />
+        </aside>
+
+        {/* ── Static sidebar (tablet md+ shows icon-only, lg+ shows full) ── */}
+        <aside
+          className="
+            hidden lg:flex
+            w-48 shrink-0 border-r border-white/6 bg-[#0b0d14] flex-col
+          "
+        >
+          <SidebarContent />
+        </aside>
+
+        {/* ── Tablet icon-only sidebar (md to lg) ── */}
+        <aside
+          className="
+            hidden md:flex lg:hidden
+            w-12 shrink-0 border-r border-white/6 bg-[#0b0d14] flex-col items-center py-3 gap-1
+          "
+        >
+          {/* Logo icon */}
+          <div className="h-6 w-6 rounded-md bg-[#c8f538] flex items-center justify-center mb-4">
+            <span className="text-black font-bold text-[10px]">AX</span>
           </div>
-          <nav className="mb-3">
-            {sidebarGeneral.map(({ label, icon: Icon, active }) => (
+          {[...sidebarGeneral, ...sidebarOutreach, ...sidebarSettings].map(
+            ({ label, icon: Icon, active }: any) => (
               <div
                 key={label}
-                className={`mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default transition-colors ${
+                title={label}
+                className={`flex items-center justify-center w-8 h-8 rounded-md cursor-default transition-colors ${
                   active
                     ? "bg-white/[0.08] text-white"
                     : "text-white/35 hover:text-white/55"
                 }`}
               >
-                <Icon size={13} className="shrink-0" />
-                <span>{label}</span>
+                <Icon size={14} />
               </div>
-            ))}
-          </nav>
-
-          {/* Outreach */}
-          <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
-            Outreach
-          </div>
-          <nav className="mb-3">
-            {sidebarOutreach.map(({ label, icon: Icon }) => (
-              <div
-                key={label}
-                className={`mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default text-white/35 hover:text-white/55 ${
-                  label === "Messages" ? "bg-[#1a2340] text-[#6080ff]" : ""
-                }`}
-              >
-                <Icon size={13} className="shrink-0" />
-                <span>{label}</span>
-              </div>
-            ))}
-          </nav>
-
-          {/* Settings */}
-          <div className="mb-1 px-2 text-[9px] font-semibold uppercase tracking-widest text-white/25">
-            Settings
-          </div>
-          <nav>
-            {sidebarSettings.map(({ label, icon: Icon }) => (
-              <div
-                key={label}
-                className="mb-0.5 flex items-center gap-2.5 rounded-md px-2 py-1.5 text-xs cursor-default text-white/35 hover:text-white/55"
-              >
-                <Icon size={13} className="shrink-0" />
-                <span>{label}</span>
-              </div>
-            ))}
-          </nav>
-
-          {/* User */}
-          <div className="mt-auto pt-4 border-t border-white/6 flex items-center gap-2 px-1">
-            <div className="h-7 w-7 rounded-full bg-[#c8f538]/20 border border-[#c8f538]/30 flex items-center justify-center text-[10px] text-[#c8f538] font-bold shrink-0">
+            ),
+          )}
+          {/* User avatar at bottom */}
+          <div className="mt-auto pt-4 border-t border-white/6 w-full flex justify-center pb-1">
+            <div className="h-7 w-7 rounded-full bg-[#c8f538]/20 border border-[#c8f538]/30 flex items-center justify-center text-[10px] text-[#c8f538] font-bold">
               KR
-            </div>
-            <div className="min-w-0">
-              <div className="text-[10px] text-white/70 truncate font-medium text-left">
-                Karan Rajput
-              </div>
-              <div className="text-[9px] text-white/30 truncate">
-                karan@aeoix.com
-              </div>
             </div>
           </div>
         </aside>
 
         {/* ── Main content ── */}
-        <main className="flex-1 overflow-hidden flex flex-col">
+        <main className="flex-1 overflow-hidden flex flex-col min-w-0">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/5 px-5 py-3 bg-[#0a0c12]">
-            <h1 className="text-sm font-semibold text-white">Analytics</h1>
+          <div className="flex items-center justify-between border-b border-white/5 px-3 sm:px-5 py-3 bg-[#0a0c12] gap-2">
             <div className="flex items-center gap-2">
+              {/* Hamburger — mobile only */}
+              <button
+                className="md:hidden text-white/50 hover:text-white transition-colors"
+                onClick={() => setDrawerOpen(true)}
+              >
+                <Menu size={16} />
+              </button>
+              <h1 className="text-sm font-semibold text-white">Analytics</h1>
+            </div>
+
+            {/* Filter chips — scroll on mobile, wrap on tablet+ */}
+            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-hide max-w-full">
               {[
                 { label: "AEOIX ×", accent: true },
                 { label: "Last 3 days ▾" },
@@ -419,7 +524,7 @@ export function DashboardMockup() {
               ].map(({ label, accent }) => (
                 <div
                   key={label}
-                  className={`rounded-lg border px-2.5 py-1 text-[10px] cursor-default ${
+                  className={`rounded-lg border px-2 sm:px-2.5 py-1 text-[9px] sm:text-[10px] cursor-default whitespace-nowrap shrink-0 ${
                     accent
                       ? "border-[#c8f538]/30 bg-[#c8f538]/10 text-[#c8f538]"
                       : "border-white/8 bg-white/4 text-white/40"
@@ -432,20 +537,26 @@ export function DashboardMockup() {
           </div>
 
           {/* Grid body */}
-          <div className="flex-1 overflow-auto p-4">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="flex-1 overflow-auto p-3 sm:p-4">
+            {/*
+              Responsive grid:
+              - Mobile  (<md):  1 column
+              - Tablet  (md):   2 columns  (same as desktop but content scrolls)
+              - Laptop+ (lg):   2 columns  (original layout)
+            */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               {/* ── Visibility Chart ── */}
-              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-semibold text-white">
+              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-3 sm:p-4">
+                <div className="flex items-center justify-between mb-2 gap-2">
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-xs font-semibold text-white shrink-0">
                       Visibility
                     </span>
-                    <span className="text-[10px] text-white/30">
+                    <span className="text-[10px] text-white/30 truncate hidden sm:block">
                       · Percentage of chats mentioning each brand
                     </span>
                   </div>
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 shrink-0">
                     {["D", "W", "M"].map((t, i) => (
                       <div
                         key={t}
@@ -525,21 +636,22 @@ export function DashboardMockup() {
               </div>
 
               {/* ── Rankings ── */}
-              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-4">
+              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-3 sm:p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
                     <span className="text-xs font-semibold text-white">
                       Rankings
                     </span>
-                    <span className="text-[10px] text-white/30">
+                    <span className="text-[10px] text-white/30 hidden sm:block">
                       · Top brands across LLMs
                     </span>
                   </div>
-                  <span className="text-[10px] text-[#c8f538] cursor-default">
+                  <span className="text-[10px] text-[#c8f538] cursor-default shrink-0">
                     Show All →
                   </span>
                 </div>
 
+                {/* Rankings table — hide SOV column on small screens */}
                 <table className="w-full text-[10px]">
                   <thead>
                     <tr className="text-white/30 border-b border-white/5">
@@ -548,8 +660,10 @@ export function DashboardMockup() {
                       <th className="text-right pb-2 font-medium">
                         VISIBILITY
                       </th>
-                      <th className="text-right pb-2 font-medium">SOV</th>
-                      <th className="text-right pb-2 font-medium">SENTIMENT</th>
+                      <th className="text-right pb-2 font-medium hidden sm:table-cell">
+                        SOV
+                      </th>
+                      <th className="text-right pb-2 font-medium">SENT.</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -572,7 +686,7 @@ export function DashboardMockup() {
                               {r.brand}
                             </span>
                             {r.you && (
-                              <span className="ml-1 rounded px-1 py-0.5 text-[8px] bg-[#c8f538]/15 text-[#c8f538] font-medium">
+                              <span className="ml-1 rounded px-1 py-0.5 text-[8px] bg-[#c8f538]/15 text-[#c8f538] font-medium hidden sm:inline">
                                 you
                               </span>
                             )}
@@ -580,7 +694,7 @@ export function DashboardMockup() {
                         </td>
                         <td className="py-1.5 text-right">
                           <div className="flex items-center justify-end gap-1.5">
-                            <div className="w-16 h-1 rounded-full bg-white/8 overflow-hidden">
+                            <div className="w-10 sm:w-16 h-1 rounded-full bg-white/8 overflow-hidden">
                               <div
                                 className="h-full rounded-full transition-all duration-1000"
                                 style={{
@@ -593,12 +707,12 @@ export function DashboardMockup() {
                                 }}
                               />
                             </div>
-                            <span className="text-white/70 w-8 text-right">
+                            <span className="text-white/70 w-7 sm:w-8 text-right">
                               {r.visibility}%
                             </span>
                           </div>
                         </td>
-                        <td className="py-1.5 text-right text-white/50">
+                        <td className="py-1.5 text-right text-white/50 hidden sm:table-cell">
                           {r.sov}%
                         </td>
                         <td className="py-1.5 text-right">
@@ -615,28 +729,29 @@ export function DashboardMockup() {
               </div>
 
               {/* ── Top Domains ── */}
-              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-4">
+              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-3 sm:p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
                     <Globe size={12} className="text-white/40" />
                     <span className="text-xs font-semibold text-white">
                       Top Domains
                     </span>
-                    <span className="text-[10px] text-white/30">
-                      · Top domains used by AI models in answers
+                    <span className="text-[10px] text-white/30 hidden sm:block">
+                      · Top domains used by AI models
                     </span>
                   </div>
-                  <span className="text-[10px] text-[#c8f538] cursor-default">
+                  <span className="text-[10px] text-[#c8f538] cursor-default shrink-0">
                     Show All →
                   </span>
                 </div>
 
+                {/* Domains table — hide avg citations on mobile */}
                 <table className="w-full text-[10px]">
                   <thead>
                     <tr className="text-white/30 border-b border-white/5">
                       <th className="text-left pb-2 font-medium">DOMAIN</th>
                       <th className="text-right pb-2 font-medium">USED</th>
-                      <th className="text-right pb-2 font-medium">
+                      <th className="text-right pb-2 font-medium hidden sm:table-cell">
                         AVG. CITATIONS
                       </th>
                       <th className="text-right pb-2 font-medium">TYPE</th>
@@ -651,13 +766,15 @@ export function DashboardMockup() {
                         <td className="py-1.5">
                           <div className="flex items-center gap-1.5">
                             <Favicon domain={d.domain} size={13} />
-                            <span className="text-white/70">{d.domain}</span>
+                            <span className="text-white/70 truncate max-w-[90px] sm:max-w-none">
+                              {d.domain}
+                            </span>
                           </div>
                         </td>
                         <td className="py-1.5 text-right text-white/60">
                           {d.used}
                         </td>
-                        <td className="py-1.5 text-right text-white/60">
+                        <td className="py-1.5 text-right text-white/60 hidden sm:table-cell">
                           {d.avgCitations}
                         </td>
                         <td className="py-1.5 text-right">
@@ -678,7 +795,7 @@ export function DashboardMockup() {
               </div>
 
               {/* ── Domain Types ── */}
-              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-4">
+              <div className="rounded-xl border border-white/6 bg-[#0d1017] p-3 sm:p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
                     <Tag size={12} className="text-white/40" />
@@ -691,8 +808,9 @@ export function DashboardMockup() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-6">
-                  <div style={{ width: 150, height: 150, minWidth: 150 }}>
+                {/* Stack pie + legend vertically on mobile, side-by-side on sm+ */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                  <div className="w-36 h-36 sm:w-[150px] sm:h-[150px] shrink-0">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
@@ -719,7 +837,7 @@ export function DashboardMockup() {
                     </ResponsiveContainer>
                   </div>
 
-                  <div className="flex-1 space-y-2">
+                  <div className="flex-1 w-full space-y-2">
                     {domainTypes.map(({ name, value, color }) => (
                       <div key={name} className="flex items-center gap-2">
                         <span style={{ color }} className="text-[11px]">
@@ -728,7 +846,7 @@ export function DashboardMockup() {
                         <span className="text-[11px] text-white/60 flex-1">
                           {name}
                         </span>
-                        <div className="w-24 h-1 rounded-full bg-white/8 overflow-hidden">
+                        <div className="w-16 sm:w-24 h-1 rounded-full bg-white/8 overflow-hidden">
                           <div
                             className="h-full rounded-full transition-all duration-1000"
                             style={{
