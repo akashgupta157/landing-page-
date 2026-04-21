@@ -70,13 +70,13 @@ function MarqueeRow({
 
 export function TrustedBySection() {
   return (
-    <section className="relative overflow-hidden py-16">
+    <section className="relative overflow-hidden py-16 xl:py-24">
       {/* Hairline borders top + bottom */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
       <Reveal>
-        <p className="mb-10 text-center font-mono text-[11px] uppercase tracking-[0.26em] text-white/24">
+        <p className="mb-10 xl:mb-14 text-center font-mono text-[11px] uppercase tracking-[0.26em] text-white/24">
           Trusted by growth teams at
         </p>
       </Reveal>

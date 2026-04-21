@@ -17,11 +17,11 @@ const missionPoints = [
 
 export function MissionSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-28 md:px-12">
+    <section className="mx-auto max-w-6xl px-6 py-28 xl:py-36 md:px-12">
 
       {/* Header — pure typography, no panels */}
       <Reveal>
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-14 xl:mb-20 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div

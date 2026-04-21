@@ -16,9 +16,9 @@ const aiEngines = [
 
 export function AiEnginesSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 md:px-12">
+    <section className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12">
       <Reveal>
-        <div className="mb-16 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="mb-16 xl:mb-24 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div
@@ -39,7 +39,7 @@ export function AiEnginesSection() {
         </div>
       </Reveal>
 
-      <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
+      <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16 xl:gap-24">
         {/* Left: stat callout */}
         <Reveal>
           <div className="shrink-0 md:w-52">

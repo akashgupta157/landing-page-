@@ -31,10 +31,10 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="mx-auto max-w-6xl px-6 py-20 md:px-12"
+      className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12"
     >
       <Reveal>
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 xl:mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div

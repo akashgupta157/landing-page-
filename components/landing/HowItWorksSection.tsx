@@ -33,9 +33,9 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:px-12">
+    <section id="how" className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12">
       <Reveal>
-        <div className="mb-10">
+        <div className="mb-10 xl:mb-14">
           <div className="mb-4 flex items-center gap-3">
             <div
               className="h-px w-7 rounded-full"
