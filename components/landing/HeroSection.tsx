@@ -432,14 +432,14 @@ export function HeroSection() {
         <Reveal delay={80}>
           <h1 className="mx-auto mt-8 max-w-5xl text-[clamp(44px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.06em] text-white">
             Own the moments when
-            <span className="block bg-[linear-gradient(180deg,#ffffff_0%,#c8f538_90%)] bg-clip-text text-transparent">
+            <span className="block bg-[linear-gradient(180deg,#ffffff_0%,#c8f538_90%)] bg-clip-text text-transparent pb-[0.20em]">
               AI decides who gets seen.
             </span>
           </h1>
         </Reveal>
 
         <Reveal delay={150}>
-          <p className="mx-auto mt-6 xl:mt-8 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
+          <p className="mx-auto mt-2 xl:mt-4 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
             Audit how ChatGPT, Gemini, Perplexity, and the rest describe your
             brand, then move faster with publisher recommendations built for
             ranking lift.
