@@ -82,7 +82,7 @@ export function StatsSection() {
               >
                 <AnimatedNumber target={stat.number} />
               </span>
-              <span className="mt-3 block font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
+              <span className="mt-3 block font-mono text-xs uppercase tracking-[0.18em] text-white/52">
                 {stat.label}
               </span>
             </div>

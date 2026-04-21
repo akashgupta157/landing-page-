@@ -35,7 +35,7 @@ export function MissionSection() {
               <span className="block text-white/40">sharp, calm, and obvious.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-7 text-white/45 md:text-base">
+          <p className="max-w-sm text-sm leading-7 text-white/62 md:text-base">
             With AEOIX, your AI search presence becomes something your team can
             actually understand and act on — fast.
           </p>
@@ -72,7 +72,7 @@ export function MissionSection() {
                 </span>
 
                 {/* Body */}
-                <p className="text-sm leading-6 text-white/50 transition-colors duration-300 group-hover:text-white/70">
+                <p className="text-sm leading-6 text-white/62 transition-colors duration-300 group-hover:text-white/82">
                   {point.body}
                 </p>
               </div>

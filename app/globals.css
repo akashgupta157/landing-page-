@@ -329,17 +329,17 @@ body {
 }
 
 .accent-pill {
-  border: 1px solid rgba(200, 245, 56, 0.18);
-  background: rgba(200, 245, 56, 0.08);
-  color: rgba(240, 248, 255, 0.82);
+  border: 1px solid rgba(200, 245, 56, 0.22);
+  background: rgba(200, 245, 56, 0.1);
+  color: rgba(200, 245, 56, 0.88);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .section-kicker {
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.75rem;
   font-family: var(--font-mono);
 }
 
@@ -433,12 +433,12 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.14);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 ::selection {

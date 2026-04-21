@@ -48,10 +48,9 @@ export function TestimonialsSection() {
               <span className="block text-white/40">presence and polish.</span>
             </h2>
           </div>
-          <p className="max-w-lg text-sm leading-7 text-white/46 md:text-base">
-            This section now reads more like social proof on a modern product
-            site: stronger card framing, cleaner author blocks, and enough
-            motion to feel alive.
+          <p className="max-w-lg text-sm leading-7 text-white/62 md:text-base">
+            Real outcomes from teams that replaced their old stack with a single
+            tool — and started seeing results within weeks.
           </p>
         </div>
       </Reveal>
@@ -63,7 +62,7 @@ export function TestimonialsSection() {
               <div className="mb-5 inline-block origin-left text-5xl leading-none text-white/10 transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1 group-hover:text-[#c8f538]/20">
                 &ldquo;
               </div>
-              <p className="flex-1 text-sm leading-7 text-white/54">
+              <p className="flex-1 text-sm leading-7 text-white/68">
                 {testimonial.quote
                   .split(testimonial.highlight)
                   .map((part, partIndex, array) =>
@@ -88,7 +87,7 @@ export function TestimonialsSection() {
                   <p className="text-sm font-medium text-white">
                     {testimonial.name}
                   </p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">
                     {testimonial.role}
                   </p>
                 </div>

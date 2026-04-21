@@ -21,7 +21,7 @@ export function AiSection() {
               <span className="block text-white/40">more like a strategist than a report.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-7 text-white/45 md:text-base">
+          <p className="max-w-sm text-sm leading-7 text-white/62 md:text-base">
             Forecasts, alerts, and conversational insight — all grounded in your real ranking data.
           </p>
         </div>
@@ -38,7 +38,7 @@ export function AiSection() {
               <h3 className="text-lg font-semibold tracking-[-0.03em] text-white">
                 Smart visibility forecasting
               </h3>
-              <p className="mt-1.5 text-sm leading-6 text-white/45">
+              <p className="mt-1.5 text-sm leading-6 text-white/60">
                 Spot where rankings slip before you lose attention — then prioritize publisher
                 moves with a clearer sense of impact.
               </p>
@@ -69,7 +69,7 @@ export function AiSection() {
               <h3 className="text-lg font-semibold tracking-[-0.03em] text-white">
                 Chat with your ranking data
               </h3>
-              <p className="mt-1.5 text-sm leading-6 text-white/45">
+              <p className="mt-1.5 text-sm leading-6 text-white/60">
                 Ask focused questions, get concise answers grounded in the exact evidence
                 behind each recommendation.
               </p>

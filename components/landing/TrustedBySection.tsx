@@ -76,7 +76,7 @@ export function TrustedBySection() {
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 
       <Reveal>
-        <p className="mb-10 xl:mb-14 text-center font-mono text-[11px] uppercase tracking-[0.26em] text-white/24">
+        <p className="mb-10 xl:mb-14 text-center font-mono text-[11px] uppercase tracking-[0.26em] text-white/42">
           Trusted by growth teams at
         </p>
       </Reveal>
