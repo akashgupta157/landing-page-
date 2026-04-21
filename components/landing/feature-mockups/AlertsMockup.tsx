@@ -1,6 +1,6 @@
 export function AlertsMockup() {
   return (
-    <div className="w-full space-y-2">
+    <div className="w-[85%] mx-auto space-y-2">
       {[
         {
           icon: "↑",
