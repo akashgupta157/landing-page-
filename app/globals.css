@@ -450,7 +450,7 @@ body::before {
   font-family: var(--font-mono) !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
@@ -464,4 +464,4 @@ body::before {
     opacity: 1;
     transform: none;
   }
-}
+} */
