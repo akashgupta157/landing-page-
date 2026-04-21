@@ -468,16 +468,14 @@ export function HeroSection() {
             // onSubmit={handleSubmit}
             className="mx-auto mt-12 xl:mt-16 w-full max-w-2xl"
           >
-            <div className="panel-shell group relative flex flex-col gap-3 rounded-[30px] p-3 md:flex-row md:items-center">
-              <div className="flex flex-1 items-center gap-3 rounded-[22px] border border-white/8 bg-black/15 px-4 py-3 transition-all duration-300 focus-within:border-[#c8f538]/40 focus-within:bg-black/25">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/8 bg-white/[0.03] transition-all duration-300 group-hover:border-[#c8f538]/20 group-hover:bg-[#c8f538]/5">
-                  <Zap
-                    size={16}
-                    className="text-[#c8f538] transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
+            <div className="panel-shell group relative flex flex-col gap-2 rounded-[26px] p-2 md:flex-row md:items-center">
+              <div className="flex flex-1 items-center gap-2.5 rounded-[20px] border border-white/8 bg-black/15 px-4 py-3.5 transition-all duration-300 focus-within:border-[#c8f538]/40 focus-within:bg-black/25">
+                <Zap
+                  size={14}
+                  className="shrink-0 text-[#c8f538]/70 transition-colors duration-300 group-hover:text-[#c8f538]"
+                />
                 <div className="flex min-w-0 flex-1 items-center">
-                  <span className="text-sm font-mono text-white/38">
+                  <span className="shrink-0 text-sm font-mono text-white/38">
                     https://
                   </span>
                   <input
@@ -492,7 +490,7 @@ export function HeroSection() {
 
               <button
                 type="submit"
-                className="button-shine cursor-pointer group relative overflow-hidden rounded-[22px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.1em] text-black shadow-[0_16px_40px_rgba(200,245,56,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_46px_rgba(200,245,56,0.35)]"
+                className="button-shine cursor-pointer group relative overflow-hidden rounded-[20px] bg-[#c8f538] px-6 py-4 text-xs font-semibold uppercase tracking-[0.1em] text-black shadow-[0_10px_28px_rgba(200,245,56,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(200,245,56,0.38)]"
               >
                 <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">
                   Get free report
