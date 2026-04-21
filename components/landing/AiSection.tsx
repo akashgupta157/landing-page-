@@ -4,10 +4,10 @@ export function AiSection() {
   return (
     <section
       id="recommendations"
-      className="mx-auto max-w-6xl px-6 py-20 md:px-12"
+      className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12"
     >
       <Reveal>
-        <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="mb-12 xl:mb-16 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div

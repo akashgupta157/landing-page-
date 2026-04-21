@@ -17,7 +17,7 @@ export function CtaSection() {
   }
 
   return (
-    <section id="cta" className="relative overflow-hidden px-6 py-32 md:px-12">
+    <section id="cta" className="relative overflow-hidden px-6 py-32 xl:py-40 md:px-12">
       <div className="spot-orb left-1/2 top-1/2 h-[380px] w-[660px] -translate-x-1/2 -translate-y-1/2 bg-[var(--glow-lime)] animate-pulse-soft" />
       <div className="spot-orb left-[20%] top-[30%] h-[200px] w-[200px] bg-[var(--glow-blue)] opacity-50" />
 

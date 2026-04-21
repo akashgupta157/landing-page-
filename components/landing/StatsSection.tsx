@@ -68,8 +68,8 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:px-12">
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <section className="mx-auto max-w-6xl px-6 py-16 xl:py-24 md:px-12">
+      <div className="grid gap-6 xl:gap-10 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, index) => (
           <Reveal key={stat.label} delay={index * 90}>
             <div className="interactive-card group text-center">

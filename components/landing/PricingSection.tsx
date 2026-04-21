@@ -59,9 +59,9 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="mx-auto max-w-6xl px-6 py-20 md:px-12">
+    <section id="pricing" className="mx-auto max-w-6xl px-6 py-20 xl:py-28 md:px-12">
       <Reveal>
-        <div className="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+        <div className="mb-14 xl:mb-20 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div

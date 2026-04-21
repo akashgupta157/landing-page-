@@ -36,9 +36,9 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-6 py-20 md:px-12">
+    <section id="faq" className="mx-auto max-w-3xl px-6 py-20 xl:py-28 md:px-12">
       <Reveal>
-        <div className="mb-10 text-center">
+        <div className="mb-10 xl:mb-14 text-center">
           <p className="section-kicker mb-3">FAQ</p>
           <h2 className="text-[clamp(32px,4vw,48px)] font-semibold leading-[1.02] tracking-[-0.05em] text-white">
             Common <span className="text-white/40">Questions</span>

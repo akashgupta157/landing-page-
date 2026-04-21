@@ -430,7 +430,7 @@ export function HeroSection() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="mx-auto mt-6 max-w-5xl text-[clamp(44px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.06em] text-white">
+          <h1 className="mx-auto mt-8 max-w-5xl text-[clamp(44px,7vw,92px)] font-semibold leading-[0.94] tracking-[-0.06em] text-white">
             Own the moments when
             <span className="block bg-[linear-gradient(180deg,#ffffff_0%,#c8f538_90%)] bg-clip-text text-transparent">
               AI decides who gets seen.
@@ -439,7 +439,7 @@ export function HeroSection() {
         </Reveal>
 
         <Reveal delay={150}>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/52 md:text-lg">
+          <p className="mx-auto mt-6 xl:mt-8 max-w-2xl text-base leading-relaxed text-white/52 md:text-lg">
             Audit how ChatGPT, Gemini, Perplexity, and the rest describe your
             brand, then move faster with publisher recommendations built for
             ranking lift.
@@ -447,7 +447,7 @@ export function HeroSection() {
         </Reveal>
 
         <Reveal delay={220}>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 xl:mt-14 flex flex-wrap items-center justify-center gap-3">
             {heroChips.map((chip, i) => (
               <div
                 key={chip}
@@ -466,7 +466,7 @@ export function HeroSection() {
         <Reveal delay={280}>
           <form
             // onSubmit={handleSubmit}
-            className="mx-auto mt-10 w-full max-w-2xl"
+            className="mx-auto mt-12 xl:mt-16 w-full max-w-2xl"
           >
             <div className="panel-shell group relative flex flex-col gap-3 rounded-[30px] p-3 md:flex-row md:items-center">
               <div className="flex flex-1 items-center gap-3 rounded-[22px] border border-white/8 bg-black/15 px-4 py-3 transition-all duration-300 focus-within:border-[#c8f538]/40 focus-within:bg-black/25">
@@ -503,7 +503,7 @@ export function HeroSection() {
         </Reveal>
 
         <Reveal delay={360}>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-white/28">
+          <div className="mt-5 xl:mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-white/28">
             <span>No credit card</span>
             <span className="h-1 w-1 rounded-full bg-white/18" />
             <span>Results in 30 seconds</span>
@@ -515,7 +515,7 @@ export function HeroSection() {
         <Reveal delay={420}>
           <a
             href="#platform"
-            className="mt-10 inline-flex flex-col items-center gap-2 text-xs text-white/34 transition-colors duration-300 hover:text-white/60"
+            className="mt-12 xl:mt-16 inline-flex flex-col items-center gap-2 text-xs text-white/34 transition-colors duration-300 hover:text-white/60"
           >
             <span className="uppercase tracking-[0.24em]">
               Explore the platform
@@ -526,7 +526,7 @@ export function HeroSection() {
           </a>
         </Reveal>
 
-        <Reveal delay={500} className="mt-14">
+        <Reveal delay={500} className="mt-16 xl:mt-24">
           <div className="relative mx-auto max-w-6xl">
             {/* <div className="pointer-events-none absolute -left-2 top-10 hidden rounded-full border border-white/10 bg-[rgba(11,14,22,0.78)] px-4 py-3 text-left shadow-[0_18px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl md:block">
               <p className="text-[10px] uppercase tracking-[0.22em] text-white/35">Brand lift</p>
