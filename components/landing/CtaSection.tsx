@@ -28,13 +28,13 @@ export function CtaSection() {
           <p className="section-kicker mb-4">Get Started</p>
           <h2 className="relative text-[clamp(40px,6vw,84px)] font-semibold leading-[0.95] tracking-[-0.06em] text-white">
             The AI Search Revolution
-            <span className="block bg-gradient-to-r from-[#c8f538] to-[#7cc8ff] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#c8f538] to-[#7cc8ff] bg-clip-text text-transparent pb-[0.20em]">
               Is Happening Now
             </span>
           </h2>
 
-          <p className="relative mx-auto mt-5 max-w-xl text-base leading-7 text-white/65 md:text-lg">
-            Every day you wait, competitors are getting cited and you're
+          <p className="relative mx-auto mt-2 xl:mt-4 max-w-xl text-base leading-7 text-white/65 md:text-lg">
+            Every day you wait, competitors are getting cited and you&apos;re
             becoming invisible. Start free today.
           </p>
 
